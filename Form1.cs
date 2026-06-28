@@ -28,7 +28,12 @@ namespace CyberSecurityBotGUI
             InitializeComponent();
             InitializeQuiz();
         }
-
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // Runs when the form first loads
+            AppendBotResponse("Welcome to CyberSecurity Bot!");
+            textBox1.Focus(); // Put cursor in input box
+        }
         //====================================================
         // ACTIVITY LOG METHODS
         //====================================================
@@ -248,12 +253,12 @@ namespace CyberSecurityBotGUI
 }
 
         // SEND BUTTON EVENT
-        
+
 
         private void btnSend_Click(object sender, EventArgs e)
         {
             string input = textBox1.Text.Trim();
-   
+
             if (string.IsNullOrWhiteSpace(input))
             {
                 AppendBotResponse("Please enter a message.");
@@ -265,7 +270,6 @@ namespace CyberSecurityBotGUI
             textBox1.Clear();
 
             Respond(input);
-
         }
 
         // BOT OUTPUT METHODS
@@ -277,9 +281,7 @@ namespace CyberSecurityBotGUI
 
         private void AppendText(string text, Color color)
         {
-            // Replace richTextBox1 with your actual RichTextBox name
-
-            richTextbox1.SelectionStart =
+            richTextBox1.SelectionStart =
                 richTextBox1.TextLength;
 
             richTextBox1.SelectionLength = 0;
@@ -294,7 +296,7 @@ namespace CyberSecurityBotGUI
             richTextBox1.ScrollToCaret();
         }
 
-       
+
     }
 
 }
