@@ -252,7 +252,7 @@ namespace CyberSecurityBotGUI
 
         private void btnSend_Click(object sender, EventArgs e)
         {
-            string input = TextBox.Text.Trim();
+            string input = textBox1.Text.Trim();
    
             if (string.IsNullOrWhiteSpace(input))
             {
@@ -262,7 +262,7 @@ namespace CyberSecurityBotGUI
 
             AppendText("You: " + input + "\n", Color.White);
 
-            TextBox.Clear();
+            textBox1.Clear();
 
             Respond(input);
 
@@ -279,19 +279,19 @@ namespace CyberSecurityBotGUI
         {
             // Replace richTextBox1 with your actual RichTextBox name
 
-            RichTextBox.SelectionStart =
-                RichTextBox.TextLength;
+            richTextbox1.SelectionStart =
+                richTextBox1.TextLength;
 
-            RichTextBox.SelectionLength = 0;
+            richTextBox1.SelectionLength = 0;
 
-            RichTextBox.SelectionColor = color;
+            richTextBox1.SelectionColor = color;
 
-            RichTextBox.AppendText(text);
+            richTextBox1.AppendText(text);
 
-            RichTextBox.SelectionColor =
-                RichTextBox.ForeColor;
+            richTextBox1.SelectionColor =
+                richTextBox1.ForeColor;
 
-            RichTextBox.ScrollToCaret();
+            richTextBox1.ScrollToCaret();
         }
 
        
